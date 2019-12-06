@@ -1,37 +1,16 @@
 <template>
-  <div id="app">
-    <Todos v-bind:todos="Todos" />
+  <div id="app" class="container">
+   <todo-list></todo-list>
   </div>
 </template>
 
 <script>
-import Todos from './components/Todos';
+import TodoList from './components/TodoList';
 
 export default {
   el: "#app",
   components: {
-    Todos
-  },
-  data(){
-    return{
-      todos: [
-        {
-          id: 1,
-          title: "Exam week 1",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "Exam week 2",
-          completed: true
-        },
-        {
-          id: 3,
-          title: "Back to coding hehe",
-          completed: false
-        }
-      ]
-    }
+    TodoList
   }
 }
 </script>
@@ -39,12 +18,20 @@ export default {
 <style>
 *{
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-body{
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.4;
+#app {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-font-smoothing: antialized;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: #2c3e50;
+  margin-top: 60px;
+  font-size: 24px
 }
+
 </style>
